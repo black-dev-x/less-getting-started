@@ -1,5 +1,6 @@
 @primary-color: #e6af2e;
 @secondary-color: #222;
+@highlight-color: #6b0504;
 @breakpoints: {
   desktop: 989px;
   tablet: 768px;
@@ -89,7 +90,7 @@ ul.menu {
 
 ul.menu li {
   margin: 5px 2px;
-  background: #6b0504;
+  background: @highlight-color;
   border-radius: 2px;
   line-height: 1.7;
   padding: 5px;
@@ -97,7 +98,7 @@ ul.menu li {
 }
 
 ul.menu li:hover {
-  background: #a3320b;
+  background: lighten(@highlight-color, 10%);
 }
 
 ul.menu li a {
@@ -165,6 +166,6 @@ ul.menu li a {
     width: 989px;
   }
   .song {
-    width: @breakpoints[desktop]/3;
+    width: ceil(@breakpoints[desktop]/3);
   }
 }
