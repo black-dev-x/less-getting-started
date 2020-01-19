@@ -1,5 +1,10 @@
 @primary-color: #e6af2e;
 @secondary-color: #222;
+@breakpoints: {
+  desktop: 989px;
+  tablet: 768px;
+  phone: 480px
+}
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
 html,
@@ -128,13 +133,13 @@ ul.menu li a {
 }
 
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: @breakpoints[phone]) {
   .container {
-    width: 480px;
+    width: @breakpoints[phone];
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: @breakpoints[tablet]) {
   .info-img {
     float: right;
     max-width: 80px;
@@ -154,12 +159,12 @@ ul.menu li a {
 
 }
 
-@media only screen and (min-width: 989px) {
+@media only screen and (min-width: @breakpoints[desktop]) {
 
   .container {
     width: 989px;
   }
   .song {
-    width: 600px;
+    width: @breakpoints[desktop]/3;
   }
 }
