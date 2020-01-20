@@ -1,9 +1,13 @@
+@import "colors";
+
 @box-shadow: {
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25)
 };
 
-.font-info() {
-    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+#namespace {
+    .font-info() {
+        font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    }
 }
 
 .box-me(@width: 1px, @color: black) {
@@ -12,4 +16,16 @@
 
 .multi(@a, @b){
     @result: @a * @b;
+}
+
+.fore-color(){
+    background-color: @primary-color;
+}
+
+.fore-color() when (lightness(@primary-color) > 50%){
+    color: white;
+}
+
+.fore-color() when (lightness(@primary-color) <= 50%){
+    color: black;
 }
