@@ -3,10 +3,10 @@ registerPlugin({
         functions.add("ten", function(){
             return 10;
         })
-        functions.add("avg", function(){
+        functions.add("sum", function(){
             let total = 0;
             for (let index = 0; index < arguments.length; index++) {
-                total += arguments[index]
+                total += arguments[index].value
             }
             return total;
         })
